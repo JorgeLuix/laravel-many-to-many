@@ -12,6 +12,8 @@
                     class="fas fa-chart-line me-2"></i>Projects</a>
             <a href="{{ route('admin.tecnologies.index') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fa-brands fa-github me-2"></i>Tecnolgies</a>
+                    <a href="{{ route('admin.types.index') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fa-brands fa-github me-2"></i>Types</a>
             <a href="{{ route('logout') }}"  onclick="event.preventDefault();
             document.getElementById('logout-form').submit();" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                     class="fas fa-power-off me-2"></i>{{ __('Logout') }}</a>

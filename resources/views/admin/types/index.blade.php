@@ -18,7 +18,7 @@
                     <td>{{ $type->name }}</td>
                     <td>{{ $type->created_at }}</td>
                     <td>
-                        <a href="{{ route('admin.types.show', $tecnology->slug) }}">Show</a>
+                        <a href="{{ route('admin.types.show', $type->slug) }}">Show</a>
                         <a href="">Edit</a>
                         <a href="">Delete</a>
                     </td>
