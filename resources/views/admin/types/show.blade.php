@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
     <h1>Type</h1>
-
-    {{-- <p>The tecnology name is: {{ $tecnology->name }}</p>
-    @foreach ($tecnology->projects as $project)
+    <p>The type name is: {{ $type->name }}</p>
+    @foreach ($type->projects as $project)
         <p>{{ $project->name }}</p>
-    @endforeach --}}
+    @endforeach
 @endsection

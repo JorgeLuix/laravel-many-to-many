@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Tecnology;
-use App\Models\Tag;
+use App\Models\Type;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
@@ -39,8 +39,8 @@ class ProjectController extends Controller
     public function create()
     {
         $tecnologies = Tecnology::all();
-        // $tags = Tag::all();
-        return view('admin.projects.create', compact('tecnologies'));
+        $types = Type::all();
+        return view('admin.projects.create', compact('tecnologies', 'types'));
     }
 
     /**
@@ -61,6 +61,11 @@ class ProjectController extends Controller
         }
 
         $project = Project::create($data);
+
+        if ($request->has('types')) {
+            $project->types()->attach($request->types);
+        }
+
         return redirect()->route('admin.projects.show', $project->slug);
     }
 
@@ -90,8 +95,8 @@ class ProjectController extends Controller
             abort(403);
         }
         $tecnologies = Tecnology::all();
-        // $tags = Tag::all();
-        return view('admin.projects.edit', compact('project', 'tecnologies'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'tecnologies', 'types'));
     }
 
     /**
@@ -114,6 +119,11 @@ class ProjectController extends Controller
             $data['image'] = asset('storage/' . $image_path);
         }
         $project->update($data);
+        if ($request->has('types')) {
+            $project->types()->sync($request->types);
+        } else {
+            $project->types()->sync([]);
+        }
         return redirect()->route('admin.projects.show', $project->slug)->with('message', 'Il post è stato aggiornato');
     }
 

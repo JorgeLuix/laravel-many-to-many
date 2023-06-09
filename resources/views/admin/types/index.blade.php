@@ -1,7 +1,8 @@
+
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Types list</h1>
+    <h1>Type list</h1>
     <table class="table">
         <thead>
             <tr>
@@ -18,9 +19,9 @@
                     <td>{{ $type->name }}</td>
                     <td>{{ $type->created_at }}</td>
                     <td>
-                        <a href="{{ route('admin.types.show', $type->slug) }}">Show</a>
-                        <a href="">Edit</a>
-                        <a href="">Delete</a>
+                        <a class="text-black" href="{{ route('admin.types.show', $type->slug) }}">Show</a>
+                        <a class="text-black" href="#">Edit</a>
+                        <a class="text-black" href="#">Delete</a>
                     </td>
                 </tr>
             @endforeach

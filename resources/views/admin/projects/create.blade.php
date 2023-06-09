@@ -56,6 +56,19 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <p>Seleziona Tipo:</p>
+                        @foreach ($types as $type)
+                            <div>
+                                <input type="checkbox" name="types[]" value="{{ $type->id }}" class="form-check-input"
+                                    {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
+                                <label for="" class="form-check-label">{{ $type->name }}</label>
+                            </div>
+                        @endforeach
+                        @error('tags')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <button type="submit" class="btn btn-primary">Add new project</button>
                     <a href="{{ route('admin.projects.index') }}" class="btn btn-danger">Back to Project</a>
                 </form>
