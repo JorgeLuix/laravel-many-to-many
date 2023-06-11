@@ -84,14 +84,14 @@
                             <tr>
                                 <th scope="row">{{ $project->id }}</th>
                                 <td>{{ $project->name }}</td>
-                                <td><img class="img-thumbnail" style="width:100px" src="{{ Vite::asset($project['image']) }}" alt="{{ $project->name }}">
+                                <td><img class="img-thumbnail" style="width:100px" src="{{ $project->image }}" alt="{{ $project->name }}">
                                 </td>
                                 <td>
                                     {{ $project->tecnology ? $project->tecnology->name : 'Senza tecnologia' }}
                                 </td>
                                 <td>{{ $project->created_at }}</td>
                                 <td>
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-around align-items-center">
                                         <a href="{{ route('admin.projects.show', $project->slug) }}" class="btn btn-primary text-white"><i
                                                 class="fa-solid fa-eye"></i></a>
                                         <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning text-white"><i
@@ -108,7 +108,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{-- {{ $projects->links('vendor.pagination.bootstrap-5') }} --}}
+                {{ $projects->links('vendor.pagination.bootstrap-4') }}
             </div>
         </div>
     </div>
