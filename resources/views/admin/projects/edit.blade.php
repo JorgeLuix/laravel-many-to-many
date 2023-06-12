@@ -44,7 +44,7 @@
                         <input type="url" class="form-control" id="repository_url" name="repository_url" value="{{ $project->repository_url }}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="tecnology_id">Tecnology</label>
+                        <label for="tecnology_id">Technology</label>
                         <select name="tecnology_id" id="tecnology_id" class="form-control @error('tecnology_id') is-invalid @enderror">
                             <option value="">Seleziona categoria</option>
                             @foreach ($tecnologies as $tecnology)

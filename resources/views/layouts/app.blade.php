@@ -21,17 +21,9 @@
 
 <body>
     <div id="app">
-
-        <header>
             @include('partials.navHeader')
-            {{-- @includeWhen(Route::currentRouteName() === 'home', 'partials.guest-page') --}}
-        </header>
-
-
-        <main>
-            <div class="container">
+        <main class="">
             @yield('content')
-        </div>
         </main>
     </div>
 </body>

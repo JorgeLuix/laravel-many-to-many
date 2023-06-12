@@ -26,15 +26,22 @@ $fa-font-path: "../fonts/webfonts" !default;
     --color-cards: #232B5C;
   }
 
-header video {
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    opacity: .2;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
+  .logo-jc {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    padding: 15px
+  }
+
+// header video {
+//     left: 50%;
+//     min-height: 100%;
+//     min-width: 100%;
+//     opacity: .2;
+//     position: absolute;
+//     top: 50%;
+//     transform: translate(-50%,-50%);
+// }
 //skillsets//
 .even-section{
     background-color: var(--main-bg-color);

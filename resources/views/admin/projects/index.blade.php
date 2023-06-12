@@ -74,7 +74,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Image</th>
-                            <th scope="col">Tecnology</th>
+                            <th scope="col">Technology</th>
                             <th scope="col">Created</th>
                             <th scope="col">Actions</th>
                         </tr>

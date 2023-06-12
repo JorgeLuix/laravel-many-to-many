@@ -21,10 +21,17 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body id="">
-    <div>
-        @yield('content')
+<body>
+    <div id="app">
 
+        {{-- @include("partials.navHeader") --}}
+
+        <main class="">
+            {{-- @include("partials.sidebar") --}}
+            <div  class="">
+                @yield("content")
+            </div>
+        </main>
     </div>
 </body>
 

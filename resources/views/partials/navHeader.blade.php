@@ -3,12 +3,16 @@
 
     <div class="container-fluid">
 
-        <div class="navb-logo">
-            <img src="" alt="Full-stack developer">
+        <div class="d-flex justify-content-between align-items-center">
+            <img class="logo-jc" src="{{ Vite::asset('/resources/image/logo-jc.jpeg')}} " alt="Full-stack developer">
+            <ul class="navbar-nav me-auto px-3">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="{{url('/') }}">{{ __('Home') }}</a>
+                </li>
+            </ul>
         </div>
 
         <div class="navb-items d-none d-xl-flex">
-
 
             <div class="item-button">
                 <ul class="d-flex list-unstyled align--center">
@@ -24,7 +28,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle btn-shadow" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
